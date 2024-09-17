@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: black;
+    overflow-x: hidden; 
+}
+
+.slide {
+    height: 100%;
+    width: 180px;
+    position: fixed; 
+    background-color: #fff;
+    transition: 0.5s ease;
+    transform: translateX(-180px);
+    z-index: 999; 
+}
+h1 {
+    color: #8000ff;
+    font-weight: 800;
+    text-align: right;
+    padding: 10px 0;
+    padding-right: 30px;
+    pointer-events: none;
+}
+ul li {
+    list-style-type: none;
+}
+ul li a {
+    color: #011a41;
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+ul li:hover a {
+    color: #f2f2f2;
+    background-color: #0099ff;
+}
+ul li a i {
+    width: 40px;
+    text-align: center;
+}
+input {
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+}
+.toggle {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Higher than the slide menu */
+    border-radius: 2px;
+    top: 20px;
+    left: 15px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #00ccff;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+.toggle .top-line {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.toggle .middle-line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.toggle .bottom-line {
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input:checked ~ .toggle .top-line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+input:checked ~ .toggle .bottom-line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+input:checked ~ .toggle .middle-line {
+    transform: translateX(20px);
+    opacity: 0;
+}
+input:checked ~ .slide {
+    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+nav{
+    background-color:black;
+    padding-bottom: 20px;
+    height:60px;
+    display: flex;
+    position: fixed;
+    width: 100%;
+}
+.header{
+    display:flex;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px;
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
+    gap: 30px;
+}
+
+.team-member {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    min-width: 200px; /* Ensures each member block stays consistent */
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.team-member h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.team-member .role {
+    font-size: 16px;
+    color: #f07f24;
+    margin-bottom: 15px;
+}
+
+.team-member .description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+
+@media (max-width: 768px) {
+    .team-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .team-member {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .team-member {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+.contact{
+    margin-top: 15px;
+    margin-right: 75px;
+}
+.about{
+    margin-top: 15px;
+    margin-right: 75px;
+}
+.home{
+   margin-left:auto;
+   margin-top: 15px;
+   margin-right: 75px;
+}
+.logo{
+    height: 40px;
+    width: 40px;
+    margin-left:auto;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+} 

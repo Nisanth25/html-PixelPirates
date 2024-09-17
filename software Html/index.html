@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Software</title>
+    <link rel="stylesheet" href="/software/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #gg {
+            display: none;
+            font-weight: bold;
+            background-color: #90EE90;
+        }
+        section{
+            text-align: center;
+            background-color:rgb(20, 190, 190);
+            padding-bottom: 20px;
+        }
+        footer{
+            background-color: black;
+            color: white;
+            font-weight: 900;
+            padding: 20px;
+            text-align: center;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="header">
+            <label>
+                <input type="checkbox" class="ham">
+                <div class="toggle">
+                    <span class="top-line common"></span>
+                    <span class="middle-line common"></span>
+                    <span class="bottom-line common"></span>
+                </div>
+                <div class="slide">
+                    <h1 style="color:#0099ff;text-align: center;">MENU</h1>
+                    <ul>
+                        <li><a href="/Home Html/index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="/Team Memebers html/index.html" target="_blank"><i class="fas fa-users"></i> Team Members</a></li>
+                        <li><a href="/research Html/index.html" target="_blank"><i class="fas fa-book"></i> Research Papers</a></li>
+                        <li><a href="/software Html/index.html" target="_blank"><i class="fas fa-laptop-code"></i> Softwares</a></li>
+                        <li><a href="/PPT/index.html" target="_blank"><i class="fas fa-file-powerpoint"></i> PPT's</a></li>
+                        <li><a href="/about/index.html" target="_blank"><i class="fas fa-user"></i> About Us</a></li>
+                        <li><a href="/contact us/index.html" target="_blank"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </label>
+        </div>
+        <p class="home"><a href="/Home Html/index.html" style="color: white;text-decoration: none;" target="_blank">Home</a></p>
+        <p class="about"><a href="/about/index.html"  style="color: white;text-decoration: none;" target="_blank">About Us</a></p>
+        <p class="contact"><a href="/contact us/index.html"  style="color: white;text-decoration: none;" target="_blank">Contact Us</a></p>
+      <div class="header">
+          <a href="/Home Html/index.html" target="_blank"><img src="/Media/Logo.png" class="logo"/></a> 
+      </div> 
+    </nav>
+
+    <section>
+        <h1 style="margin-top: 55px;">Carbon Output Evaluator</h1>
+        <form>
+            <label for="ff">Fuel Category:</label>
+            <select name="fuel" id="ff" onchange="u()">
+                <option value="p">Petrol</option>
+                <option value="d">Diesel</option>
+                <option value="v">Electric</option>
+                <option value="h">Hybrid</option>
+                <option value="c">Compressed Natural Gas(CNG)</option>
+                <option value="l">Liquid Petroleum Gas(LPG)</option>
+                <option value="o">Other</option>
+            </select><br><br><br><br>
+
+            <div id="a1" >
+                Total Distance Travelled (in km)? 
+                <input type="number" id="b1"><br><br>
+                Efficiency of Vehicle (km per unit)? 
+                <input type="number" id="c1"><br><br>
+            </div>
+
+            <div id="a2" style="display:none;">
+                CO2 Emission Factor for Fuel Type (g per unit): 
+                <input type="number" id="d1"><br>
+                <span id="note" style="display:none; color:gray;">P.S. Use Google</span><br><br>
+            </div>
+
+            <button type="button" onclick="t()">Evaluate Output</button>
+        </form>
+
+        <h3><p id="rr"></p></h3>
+        <h4><div id="gg">Surprise: in 2024, electric cars produce zero emissions while driving but may contribute more during production. Technology advancements will continue reducing the footprint!</div></h4>
+
+        <script>
+            function u() {
+                var s = document.getElementById('ff').value;
+                var a = document.getElementById('a1');
+                var b = document.getElementById('a2');
+                var c = document.getElementById('note');
+                var result = document.getElementById('rr');  // Get the result element
+                var surprise = document.getElementById('gg'); // Get the surprise div
+
+                result.innerHTML = ""; // Clear the result on fuel type change
+                
+                if (s === 'v') {
+                    // For electric vehicles
+                    a.style.display = 'none';
+                    b.style.display = 'none';
+                    c.style.display = 'none';
+                    surprise.style.display = 'block';  // Show the surprise message
+                } else if (s === 'o') {
+                    // For "Other" option
+                    a.style.display = 'block';
+                    b.style.display = 'block';  // Show emission factor input
+                    surprise.style.display = 'none';
+                    c.style.display = 'none';   // Initially hide the note
+                    
+                    setTimeout(function() {
+                        c.style.display = 'inline';  // Show the note after 4 seconds
+                    }, 4000);
+                } else {
+                    // For all other options (Petrol, Diesel, Hybrid, CNG, LPG)
+                    a.style.display = 'block';   // Show distance and efficiency input
+                    b.style.display = 'none';    // Hide emission factor input
+                    c.style.display = 'none';    // Hide the note
+                    surprise.style.display = 'none';  // Hide the surprise message
+                }
+            }
+
+            function t() {
+                var k = document.getElementById('ff').value;
+                var x = document.getElementById('b1').value;
+                var y = document.getElementById('c1').value;
+                var f = document.getElementById('gg');
+                var g;
+
+                if (k !== 'v' && (x <= 0 || y <= 0)) {
+                    document.getElementById('rr').innerHTML = "Please provide valid numbers.";
+                    return;
+                }
+
+                switch (k) {
+                    case 'p':
+                        g = 2420;
+                        break;
+                    case 'd':
+                        g = 2670;
+                        break;
+                    case 'v':
+                        g = 0;
+                        break;
+                    case 'h':
+                        g = 1250;
+                        break;
+                    case 'c':
+                        g = 1930;
+                        break;
+                    case 'l':
+                        g = 1690;
+                        break;
+                    case 'o':
+                        g = document.getElementById('d1').value;
+                        if (g <= 0) {
+                            document.getElementById('rr').innerHTML = "Please provide a valid factor.";
+                            return;
+                        }
+                        break;
+                    default:
+                        g = 2420;
+                }
+
+                var z = x / y;
+                var result = z * g;
+                result = result / 1000;
+
+                if (k === 'v') {
+                    document.getElementById('rr').innerHTML = "Your vehicle's carbon footprint is <b>zero</b> kg of CO2 (electric vehicle).";
+                } else {
+                    document.getElementById('rr').innerHTML = "Your vehicle's carbon output is approximately <b>" + result.toFixed(2) + " kg</b> of CO2.";
+                }
+            }
+        </script>
+    </section>
+    <footer>
+        <p class="foot">&copy; 2024 Pixel Pirates. All rights reserved.</p>
+     </footer>
+</body>
+
+</html>

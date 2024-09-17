@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/Home css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Avengeance:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="icon" href="/Media/fav.png" type="image/x-icon">
+</head>
+<style>
+    button{
+        border-radius: 20px;
+        color: white;
+        background-color: rgba(0,0,0,0);
+        margin-left: 100px;
+        width: 90px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-top: 5PX;
+        cursor: pointer;
+        background-color: rgb(20, 206, 206);
+        transition: .4s;
+    }
+    button:hover{
+        background-color: transparent;
+        border: 3px solid  rgb(20, 206, 206);
+    }
+    .foot{
+        background-color:rgba(0,0,0,0.7);
+        color: white;
+        margin-top: 50px;
+        text-align:center ;
+        padding: 20px;
+        font-weight: 900;
+    }
+</style>
+<body>
+    <nav>
+        <div class="header">
+            <label>
+                <input type="checkbox">
+                <div class="toggle">
+                    <span class="top-line common"></span>
+                    <span class="middle-line common"></span>
+                    <span class="bottom-line common"></span>
+                </div>
+                <div class="slide">
+                    <h1 style="color:#0099ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MENU</h1>
+                    <ul>
+                        <li><a href="/Home Html/index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="/Team Memebers html/index.html" target="_blank"><i class="fas fa-users"></i> Team Members</a></li>
+                        <li><a href="/research Html/" target="_blank"><i class="fas fa-book"></i> Research Papers</a></li>
+                        <li><a href="/software Html/index.html" target="_blank"><i class="fas fa-laptop-code"></i> Softwares</a></li>
+                        <li><a href="/PPT/index.html" target="_blank"><i class="fas fa-file-powerpoint"></i> PPT's</a></li>
+                        <li><a href="/about/index.html" target="_blank"><i class="fas fa-user"></i> About Us</a></li>
+                        <li><a href="/contact us/index.html" target="_blank"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </label>
+        </div>
+          <p class="home"><a href="/Home Html/index.html" style="color: white;text-decoration: none;" target="_blank">Home</a></p>
+          <p class="about"><a href="/about/index.html"  style="color: white;text-decoration: none;" target="_blank">About Us</a></p>
+          <p class="contact"><a href="/contact us/index.html"  style="color: white;text-decoration: none;" target="_blank">Contact Us</a></p>
+        <div class="header">
+            <a href="/Home Html/index.html"><img src="/Media/Logo.png" class="logo"/></a> 
+        </div> 
+    </nav>
+    
+    <div class="background-div">
+        <video autoplay muted loop id="bg-vid">
+            <source src="/Media/bg-vid.mp4" type="video/mp4">
+        </video>
+    </div>
+    <section>
+        <h1 class="pirate">Welcoming You To The<br/>Pixel Pirates</h1>
+    </section>
+    <section class="sec-1">
+        <p style="color: white;">"Discover expertly curated research papers offering the latest insights and advancements.Stay informed with groundbreaking knowledge and industry-leading findings for academic and professional growth."</p>
+        <button type="button"><a href="/research Html/index.html" style="text-decoration: none;color: white;" target="_blank">click here</a></button>
+     </section>
+     <section class="sec-1" id="sec-1">
+        <p style="color: white;">"Explore our innovative software solutions designed to boost efficiency, enhance productivity, and streamline workflows across industries. Empower your business with cutting-edge technology."</p>
+        <button type="button"><a href="/software Html/index.html" style="text-decoration: none;color: white;" target="_blank">click here</a></button>
+     </section>
+     <footer>
+        <p class="foot">&copy; 2024 Pixel Pirates. All rights reserved.</p>
+     </footer>
+</body>
+</html>
